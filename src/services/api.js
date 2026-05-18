@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+// Bypass ngrok's browser warning interstitial page for AJAX calls
+axios.defaults.headers.common['ngrok-skip-browser-warning'] = 'any-value';
+
 const DEFAULT_NODE = 'http://127.0.0.1:8080';
 
 export const getHealth = async (nodeUrl = DEFAULT_NODE) => {
